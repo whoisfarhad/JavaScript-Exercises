@@ -1,0 +1,44 @@
+/*
+Exercise: Student Grade Analysis
+We have an array of student records, where each record has:
+- name
+- grades (array of numbers)
+- attendance (percentage)
+
+Your tasks:
+1. Filter out students with attendance less than 80%
+2. For remaining students, calculate their average grade
+3. Map the results to create a summary for each student
+4. Sort students by their average grade (highest first)
+*/
+
+const students = [
+    { name: "Alice", grades: [85, 90, 92], attendance: 90 },
+    { name: "Bob", grades: [75, 80, 85], attendance: 75 },
+    { name: "Charlie", grades: [95, 88, 91], attendance: 85 },
+    { name: "David", grades: [88, 89, 87], attendance: 95 },
+    { name: "Eve", grades: [92, 93, 90], attendance: 88 }
+];
+
+// Try to solve these steps:
+
+// 1. Filter students with >= 80% attendance
+// Hint: use filter()
+
+// 2. Calculate average grade for each student
+// Hint: use map() and reduce()
+
+// 3. Create summary objects with name and average
+// Hint: use map()
+
+// 4. Sort by average grade
+// Hint: use sort()
+
+Try solving this yourself first! Here's what your final output should look like:
+
+[
+    { name: "Charlie", average: 91.33 },
+    { name: "Eve", average: 91.67 },
+    { name: "David", average: 88 },
+    { name: "Alice", average: 89 }
+]

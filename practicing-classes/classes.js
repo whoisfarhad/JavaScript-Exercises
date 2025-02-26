@@ -102,3 +102,34 @@ console.log(temp.fahrenheit);
 
 temp.celsius = 30;
 console.log(temp.fahrenheit);
+
+
+// Inheritance
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+
+    speak() {
+        console.log(`${this.name} makes a sound.`);
+    }
+}
+
+class Dog extends Animal {
+    constructor(name, bread) {
+        super(name);  // Call the parent constructor
+        this.bread = bread;
+    }
+
+    speak() {
+        console.log(`${this.name} barks!`);
+    }
+
+    fetch() {
+        console.log(`${this.name} fetches the ball!`);
+    }
+}
+
+const rex = new Dog('Rex', 'German Shepherd');
+rex.speak();  // "Rex barks!"
+rex.fetch();  // "Rex fetches the ball"

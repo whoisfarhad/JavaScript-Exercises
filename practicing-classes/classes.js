@@ -133,3 +133,51 @@ class Dog extends Animal {
 const rex = new Dog('Rex', 'German Shepherd');
 rex.speak();  // "Rex barks!"
 rex.fetch();  // "Rex fetches the ball"
+
+
+// Private class features
+class BankAccount {
+    #balance = 0;  // Private field
+
+    constructor(initialBalance) {
+        if (initialBalance > 0) {
+            this.#balance = initialBalance;
+        }
+    }
+
+    deposit(amount) {
+        if (amount > 0) {
+            this.#balance += amount;
+            return true;
+        }
+        return false
+    }
+
+    withdraw(amount) {
+        if (amount > 0 && amount <= this.#balance) {
+            this.#balance -= amount;
+            return true;
+        }
+        return false;
+    }
+
+    getBalance() {
+        return this.#balance;
+    }
+
+    #calculateInterest() {  // Private method
+        return this.#balance + 0.05;
+    }
+
+    applyInterest() {
+        const interest = this.#calculateInterest();
+        this.#balance += interest;
+        return interest;
+    }
+}
+
+const account = new BankAccount(100);
+console.log(account.getBalance());
+
+account.deposit(50);
+console.log(account.getBalance());  // 150

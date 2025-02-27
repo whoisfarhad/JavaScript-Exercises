@@ -181,3 +181,53 @@ console.log(account.getBalance());
 
 account.deposit(50);
 console.log(account.getBalance());  // 150
+
+
+// Inheritance vs Composition
+// Inheritance approach:
+class Vehicle {
+    constructor(speed) {
+        this.speed = speed;
+    }
+
+    move() {
+        console.log(`Moving at ${this.speed} kmh`);
+    }
+}
+
+class Car extends Vehicle {
+    constructor(speed, make) {
+        super(speed);
+        this.make = make;
+    }
+}
+
+
+// Composition approach
+class Engine {
+    start() {
+        console.log("Engine started");
+    }
+}
+
+class Wheels {
+    rotate() {
+        console.log("Wheels rotating");
+    }
+}
+
+class CarComposition {
+    constructor(make) {
+        this.make = make;
+        this.engine = new Engine();
+        this.wheels = new Wheels();
+    }
+
+    start() {
+        this.engine.start();
+    }
+
+    drive() {
+        this.wheels.rotate();
+    }
+}

@@ -53,7 +53,7 @@ async function getPostWithDetails(postId) {
         // Note: using the Promise.all to fetch all author info in parallel
         const commentsWithAuthors = await Promise.all(
             comments.map(async (comment) => {
-                const author = fetchAuthorInfo(comment.author);
+                const author = await fetchAuthorInfo(comment.author);
 
                 // Return a new object with all comments plus author details
                 return { ...comment, author };

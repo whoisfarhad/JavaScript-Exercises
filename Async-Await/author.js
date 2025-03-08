@@ -72,3 +72,16 @@ async function getPostWithDetails(postId) {
         throw error; // re-throw to allow callers to also handle the error
     }
 }
+
+// Usage
+async function displayPost() {
+    try {
+        console.log("Starting to fetch post data...");
+        const post = await getPostWithDetails(1);
+        console.log("Complete post data:", JSON.stringify(post, null, 2));
+    } catch (error) {
+        console.error("Failed to display error:", error);
+    }
+}
+
+displayPost();

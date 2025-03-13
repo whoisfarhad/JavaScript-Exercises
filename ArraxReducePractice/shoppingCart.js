@@ -10,7 +10,7 @@ const shoppingCart = [
 function calculateTotal(cart) {
     const subTotal = cart.reduce((total, item) => {
         const itemPrice = item.price * item.quantity;
-        const discountAmount = itmePrice * (item.discountPercent / 100);
+        const discountAmount = itemPrice * (item.discountPercent / 100);
         return total + (itemPrice - discountAmount);
     }, 0);
 

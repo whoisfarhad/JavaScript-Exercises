@@ -40,3 +40,22 @@ const addOne = x => x + 1;
 
 const doubleAndAddOne = compose(addOne, double2);
 console.log(doubleAndAddOne(5));
+
+
+// Currying
+function curry(fn) {
+    return function (a) {
+        return function (b) {
+            return fn(a, b);
+        }
+    }
+}
+
+function add(a, b) {
+    return a + b;
+}
+
+const curriedAdd = curry(add);
+const addFive = curriedAdd(5);
+
+console.log(addFive(3));

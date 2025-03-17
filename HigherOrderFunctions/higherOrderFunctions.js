@@ -29,3 +29,14 @@ console.log(triple(5));
 
 
 // Function composition
+function compose(f, g) {
+    return function (x) {
+        return f(g(x));
+    };
+}
+
+const double2 = x => x * 2;
+const addOne = x => x + 1;
+
+const doubleAndAddOne = compose(addOne, double2);
+console.log(doubleAndAddOne(5));

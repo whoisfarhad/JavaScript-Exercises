@@ -29,3 +29,47 @@ calls is a valid JSON array
 1 <= calls.length <= 10
 1 <= calls[i].length <= 100
 2 <= JSON.stringify(calls).length <= 1000
+
+
+Explanation of the Solution
+
+State Tracking:
+
+We create a variable hasBeenCalled initialized to false to track if the function has been called
+We also create a variable result to store the return value from the first call
+
+
+Closure:
+
+The inner function forms a closure over these variables, meaning they persist between function calls
+This lets us "remember" whether the function has been called before
+
+
+Function Logic:
+
+When the returned function is called:
+
+If hasBeenCalled is false, we:
+
+Call the original function fn with the provided arguments
+Store the result
+Set hasBeenCalled to true
+Return the result
+
+
+If hasBeenCalled is already true, we simply return undefined
+
+
+
+
+Rest Parameters (...args):
+
+We use the spread/rest syntax to allow the function to accept any number of arguments
+This makes our solution flexible, regardless of how many parameters the original function expects
+
+
+
+Time and Space Complexity
+
+Time Complexity: O(1) - Constant time operations regardless of input size
+Space Complexity: O(1) - We only store a boolean flag and the result of the function

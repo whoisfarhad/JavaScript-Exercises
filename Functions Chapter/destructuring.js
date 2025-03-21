@@ -12,4 +12,8 @@ function vectorAdd(
     {
         x: x2, y: y2 // Unpack 2nd object into x2 and y2
     }
-)
+) {
+    return { x: x1 + x2, y: y1 + y2 };
+}
+
+vectorAdd({ x: 1, y: 2 }, { x: 3, y: 4 })  // => x: 4, y: 6

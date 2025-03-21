@@ -17,3 +17,11 @@ function vectorAdd(
 }
 
 vectorAdd({ x: 1, y: 2 }, { x: 3, y: 4 })  // => x: 4, y: 6
+
+
+// Defining parameter defaults with destructured parameters:
+// Multiplying the vector {x,y} or {x,y,z} by a scalar value
+function vectorMultiply({ x, y, z = 0 }, scalar) {
+    return { x: x * scalar, y: y * scalar, z: z * scalar };
+}
+vectorMultiply({ x: 1, y: 2 }, 2)  // => {x: 2, y: 4, z: 0}
